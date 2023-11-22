@@ -33,15 +33,20 @@
     <mat-header-cell *matHeaderCellDef>Idade</mat-header-cell>
     <mat-cell *matCellDef="let item">{{item.idade}}</mat-cell>
   </ng-container>
+  <ng-container matColumnDef="telefone">
+    <mat-header-cell *matHeaderCellDef>Telefone</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{item.telefone | telefone}}</mat-cell>
+  </ng-container>
+
 
   <ng-container matColumnDef="acoes">
     <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
     <mat-cell *matCellDef="let item">
-      <button mat-icon-button>
-        <mat-icon (click)="editar(item)">editar</mat-icon>
+      <button mat-icon-button (click)="editar(item)">
+        <mat-icon >editar</mat-icon>
       </button>
-      <button mat-icon-button>
-        <mat-icon (click)="apagar(item.id)">delete</mat-icon>
+      <button mat-icon-button (click)="apagar(item.id)">
+        <mat-icon >delete</mat-icon>
       </button>
     </mat-cell>
   </ng-container>

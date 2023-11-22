@@ -38,7 +38,7 @@ export class MantemUsuarioComponent {
   manter(): void {
     if (this.estahCadastrando && this.usuarioDeManutencao) {
       this.usuarioService.inserir(this.usuarioDeManutencao).subscribe(
-        usuarioInserido => this.mensagemService.sucesso('Usuário cadastrado com sucesso!')
+        usuarioInserido => this.mensagemService.alert('Usuário cadastrado com sucesso!')
       );
     } else {
       this.usuarioService.atualizar(this.usuarioDeManutencao).subscribe(
@@ -47,6 +47,7 @@ export class MantemUsuarioComponent {
     }
     this.usuarioDeManutencao = new Usuario();
     this.nomeBotaoManutencao = 'Cadastrar';
+
     this.roteador.navigate(['listagemusuarios']);
   }
 
